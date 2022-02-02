@@ -29,7 +29,7 @@ module.exports = {
 
   // Page and Application information
   pageId: process.env.PAGE_ID,
-  pageId: process.env.PAGE_ID2,
+  pageId2: process.env.PAGE_ID2,
   appId: process.env.APP_ID,
   pageAccesToken: process.env.PAGE_ACCESS_TOKEN,
   pageAccesToken2: process.env.PAGE_ACCESS_TOKEN2,
