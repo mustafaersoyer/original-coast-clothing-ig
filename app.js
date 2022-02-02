@@ -26,7 +26,7 @@ var users = {};
 // Parse application/x-www-form-urlencoded
 app.use(
   urlencoded({
-    extended: true
+    extended: true,
   })
 );
 
@@ -87,7 +87,7 @@ app.post("/webhook", (req, res) => {
 
   console.log(`\u{1F7EA} Received webhook:`);
   console.dir(body, { depth: null });
-  console.log("\n" , " body: ", body);
+  console.log("\n", " body: ", body);
 
   // Check if this is an event from a page subscription
   if (body.object === "instagram") {
@@ -186,20 +186,20 @@ async function main() {
   const iceBreakers = [
     {
       question: i18n.__("menu.support"),
-      payload: "CARE_SALES"
+      payload: "CARE_SALES",
     },
     {
       question: i18n.__("menu.order"),
-      payload: "SEARCH_ORDER"
+      payload: "SEARCH_ORDER",
     },
     {
       question: i18n.__("menu.help"),
-      payload: "CARE_HELP"
+      payload: "CARE_HELP",
     },
     {
       question: i18n.__("menu.suggestion"),
-      payload: "CURATION"
-    }
+      payload: "CURATION",
+    },
   ];
 
   // Set our Icebreakers upon launch
