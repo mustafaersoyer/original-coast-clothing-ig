@@ -34,7 +34,7 @@ module.exports = class GraphApi {
   static async getUserProfile(senderIgsid, entryId) {
     let url = new URL(`${config.apiUrl}/${senderIgsid}`);
     let token;
-    if (entryId == "17841451308335281") {
+    if (entryId != "17841451308335281") {
       token = config.pageAccesToken;
     } else {
       token = config.pageAccesToken2;
