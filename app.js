@@ -113,6 +113,7 @@ app.post("/webhook", (req, res) => {
 
       // Iterate over webhook events - there may be multiple
       entry.messaging.forEach(async function(webhookEvent) {
+        console.log("WEBHOOOOOOK : ", webhookEvent);
         // Discard uninteresting events
         if (
           "message" in webhookEvent &&
