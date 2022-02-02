@@ -19,7 +19,7 @@ const ENV_VARS = [
   "APP_ID",
   "PAGE_ACCESS_TOKEN",
   "APP_SECRET",
-  "VERIFY_TOKEN"
+  "VERIFY_TOKEN",
 ];
 
 module.exports = {
@@ -39,7 +39,7 @@ module.exports = {
   appUrl: process.env.APP_URL || "<App URL>",
 
   // Preferred port (default to 3000)
-  port: process.env.PORT || 3000,
+  port: process.env.PORT || 5000,
 
   // Optionally set a locale
   locale: process.env.LOCALE,
@@ -60,5 +60,5 @@ module.exports = {
         console.warn(`WARNING: Missing required environment variable ${key}`);
       }
     });
-  }
+  },
 };
