@@ -69,7 +69,7 @@ module.exports = class GraphApi {
     if (response.ok) {
       console.log(`Icebreakers have been set.`);
     } else {
-      console.warn(`Error setting ice breakers`, response.statusText);
+      console.warn(`Error setting ice breakers`, response.body);
     }
 
     //2
@@ -89,7 +89,7 @@ module.exports = class GraphApi {
     if (response.ok) {
       console.log(`Icebreakers have been set.`);
     } else {
-      console.warn(`Error setting ice breakers`, response.statusText);
+      console.warn(`Error setting ice breakers`, response.body);
     }
 
     //2
