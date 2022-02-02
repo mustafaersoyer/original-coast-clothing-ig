@@ -204,7 +204,7 @@ async function main() {
           payload: "CURATION",
         },
       ],
-      locale: "default", // default locale is REQUIRED
+      locale: "en_US", // default locale is REQUIRED
     },
   ];
 
