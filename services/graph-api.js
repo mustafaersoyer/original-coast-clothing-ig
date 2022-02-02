@@ -74,7 +74,6 @@ module.exports = class GraphApi {
 
     //2
 
-    let url = new URL(`${config.apiUrl}/me/messenger_profile`);
     url.search = new URLSearchParams({
       access_token: config.pageAccesToken2,
     });
@@ -113,12 +112,12 @@ module.exports = class GraphApi {
 
     //2
 
-    let url = new URL(`${config.apiUrl}/${config.pageId2}/subscribed_apps`);
-    url.search = new URLSearchParams({
+    let url2 = new URL(`${config.apiUrl}/${config.pageId2}/subscribed_apps`);
+    url2.search = new URLSearchParams({
       access_token: config.pageAccesToken2,
       subscribed_fields: "feed",
     });
-    let response = await fetch(url, {
+    let response = await fetch(url2, {
       method: "POST",
     });
     if (response.ok) {
