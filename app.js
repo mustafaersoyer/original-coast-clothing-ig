@@ -113,7 +113,6 @@ app.post("/webhook", (req, res) => {
 
       // Iterate over webhook events - there may be multiple
       entry.messaging.forEach(async function(webhookEvent) {
-        console.log("WEBHOOOOOOK : ", webhookEvent);
         // Discard uninteresting events
         if (
           "message" in webhookEvent &&
@@ -186,25 +185,20 @@ async function main() {
 
   const iceBreakers = [
     {
-      call_to_actions: [
-        {
-          question: i18n.__("menu.support"),
-          payload: "CARE_SALES",
-        },
-        {
-          question: i18n.__("menu.order"),
-          payload: "SEARCH_ORDER",
-        },
-        {
-          question: i18n.__("menu.help"),
-          payload: "CARE_HELP",
-        },
-        {
-          question: i18n.__("menu.suggestion"),
-          payload: "CURATION",
-        },
-      ],
-      locale: "en_US", // default locale is REQUIRED
+      question: i18n.__("menu.support"),
+      payload: "CARE_SALES",
+    },
+    {
+      question: i18n.__("menu.order"),
+      payload: "SEARCH_ORDER",
+    },
+    {
+      question: i18n.__("menu.help"),
+      payload: "CARE_HELP",
+    },
+    {
+      question: i18n.__("menu.suggestion"),
+      payload: "CURATION",
     },
   ];
 
