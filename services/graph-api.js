@@ -31,10 +31,16 @@ module.exports = class GraphApi {
     }
   }
 
-  static async getUserProfile(senderIgsid) {
+  static async getUserProfile(senderIgsid, entryId) {
     let url = new URL(`${config.apiUrl}/${senderIgsid}`);
+    let token;
+    if (entryId == "17841451308335281") {
+      token = config.pageAccesToken;
+    } else {
+      token = config.pageAccesToken2;
+    }
     url.search = new URLSearchParams({
-      access_token: config.pageAccesToken,
+      access_token: token,
       fields: "name,profile_pic",
     });
     let response = await fetch(url);

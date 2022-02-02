@@ -126,7 +126,10 @@ app.post("/webhook", (req, res) => {
         if (!(senderIgsid in users)) {
           // First time seeing this user
           let user = new User(senderIgsid);
-          let userProfile = await GraphApi.getUserProfile(senderIgsid);
+          let userProfile = await GraphApi.getUserProfile(
+            senderIgsid,
+            entry.id
+          );
           if (userProfile) {
             user.setProfile(userProfile);
             users[senderIgsid] = user;
