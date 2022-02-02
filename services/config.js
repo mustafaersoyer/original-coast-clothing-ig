@@ -29,8 +29,10 @@ module.exports = {
 
   // Page and Application information
   pageId: process.env.PAGE_ID,
+  pageId: process.env.PAGE_ID2,
   appId: process.env.APP_ID,
   pageAccesToken: process.env.PAGE_ACCESS_TOKEN,
+  pageAccesToken2: process.env.PAGE_ACCESS_TOKEN2,
   appSecret: process.env.APP_SECRET,
   verifyToken: process.env.VERIFY_TOKEN,
   shopUrl: process.env.SHOP_URL || "https://www.originalcoastclothing.com",

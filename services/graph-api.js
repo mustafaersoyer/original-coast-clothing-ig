@@ -19,12 +19,12 @@ module.exports = class GraphApi {
   static async callSendApi(requestBody) {
     let url = new URL(`${config.apiUrl}/me/messages`);
     url.search = new URLSearchParams({
-      access_token: config.pageAccesToken
+      access_token: config.pageAccesToken,
     });
     let response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(requestBody)
+      body: JSON.stringify(requestBody),
     });
     if (!response.ok) {
       console.warn(`Could not sent message.`, response.statusText);
@@ -35,14 +35,14 @@ module.exports = class GraphApi {
     let url = new URL(`${config.apiUrl}/${senderIgsid}`);
     url.search = new URLSearchParams({
       access_token: config.pageAccesToken,
-      fields: "name,profile_pic"
+      fields: "name,profile_pic",
     });
     let response = await fetch(url);
     if (response.ok) {
       let userProfile = await response.json();
       return {
         name: userProfile.name,
-        profilePic: userProfile.profile_pic
+        profilePic: userProfile.profile_pic,
       };
     } else {
       console.warn(
@@ -55,37 +55,78 @@ module.exports = class GraphApi {
   static async setIcebreakers(iceBreakers) {
     let url = new URL(`${config.apiUrl}/me/messenger_profile`);
     url.search = new URLSearchParams({
-      access_token: config.pageAccesToken
+      access_token: config.pageAccesToken,
     });
     let json = {
       platform: "instagram",
-      ice_breakers: iceBreakers
+      ice_breakers: iceBreakers,
     };
     let response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(json)
+      body: JSON.stringify(json),
     });
     if (response.ok) {
       console.log(`Icebreakers have been set.`);
     } else {
       console.warn(`Error setting ice breakers`, response.statusText);
     }
+
+    //2
+
+    let url = new URL(`${config.apiUrl}/me/messenger_profile`);
+    url.search = new URLSearchParams({
+      access_token: config.pageAccesToken2,
+    });
+    let json = {
+      platform: "instagram",
+      ice_breakers: iceBreakers,
+    };
+    let response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(json),
+    });
+    if (response.ok) {
+      console.log(`Icebreakers have been set.`);
+    } else {
+      console.warn(`Error setting ice breakers`, response.statusText);
+    }
+
+    //2
   }
 
   static async setPageSubscriptions() {
     let url = new URL(`${config.apiUrl}/${config.pageId}/subscribed_apps`);
     url.search = new URLSearchParams({
       access_token: config.pageAccesToken,
-      subscribed_fields: "feed"
+      subscribed_fields: "feed",
     });
     let response = await fetch(url, {
-      method: "POST"
+      method: "POST",
     });
     if (response.ok) {
       console.log(`Page subscriptions have been set.`);
     } else {
       console.warn(`Error setting page subscriptions`, response.statusText);
     }
+
+    //2
+
+    let url = new URL(`${config.apiUrl}/${config.pageId2}/subscribed_apps`);
+    url.search = new URLSearchParams({
+      access_token: config.pageAccesToken2,
+      subscribed_fields: "feed",
+    });
+    let response = await fetch(url, {
+      method: "POST",
+    });
+    if (response.ok) {
+      console.log(`Page subscriptions have been set.`);
+    } else {
+      console.warn(`Error setting page subscriptions`, response.statusText);
+    }
+
+    //2
   }
 };
