@@ -72,7 +72,7 @@ module.exports = class GraphApi {
       console.warn(`Error setting ice breakers`, response.statusText);
     }
 
-    /*  //2
+    //2
 
     url.search = new URLSearchParams({
       access_token: config.pageAccesToken2,
@@ -92,7 +92,7 @@ module.exports = class GraphApi {
       console.warn(`Error setting ice breakers`, response.statusText);
     }
 
-    //2*/
+    //2
   }
 
   static async setPageSubscriptions() {
@@ -111,7 +111,7 @@ module.exports = class GraphApi {
     }
 
     //2
-    /*
+
     let url2 = new URL(`${config.apiUrl}/${config.pageId2}/subscribed_apps`);
     url2.search = new URLSearchParams({
       access_token: config.pageAccesToken2,
@@ -126,6 +126,6 @@ module.exports = class GraphApi {
       console.warn(`Error setting page subscriptions`, response.statusText);
     }
 
-    //2*/
+    //2
   }
 };
