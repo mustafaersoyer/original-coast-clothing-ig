@@ -77,11 +77,11 @@ module.exports = class GraphApi {
     url.search = new URLSearchParams({
       access_token: config.pageAccesToken2,
     });
-    let json = {
+    json = {
       platform: "instagram",
       ice_breakers: iceBreakers,
     };
-    let response = await fetch(url, {
+    response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(json),
@@ -117,7 +117,7 @@ module.exports = class GraphApi {
       access_token: config.pageAccesToken2,
       subscribed_fields: "feed",
     });
-    let response = await fetch(url2, {
+    response = await fetch(url2, {
       method: "POST",
     });
     if (response.ok) {
